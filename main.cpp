@@ -8,6 +8,8 @@
 #include "triangleVertices.h"
 #include "roomVertices.h"
 
+using namespace std;
+
 
 const char *vertexShaderSource = load_file("vertex.glsl");
 
@@ -32,7 +34,7 @@ int main()
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
     glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
 
-    GLFWwindow *window = glfwCreateWindow(800, 600, "CSCI 4620", NULL, NULL);
+    GLFWwindow *window = glfwCreateWindow(640, 480, "CSCI 4620", NULL, NULL);
 
     if (!window)
     {
@@ -151,8 +153,8 @@ int main()
 
     float rotation = 0;
 
-    float mouse_x = 0;
-    float mouse_y = 0;
+    double mouse_x = 0;
+    double mouse_y = 0;
     bool last_hover = false;
 
     while (!glfwWindowShouldClose(window))
@@ -169,7 +171,7 @@ int main()
                 double delta_x = x - mouse_x;
                 double delta_y = y - mouse_y;
 
-                rotation += delta_x * .01f;
+                rotation -= delta_x * .001f;
             }
             else{
 
