@@ -171,7 +171,7 @@ int main()
                 double delta_x = x - mouse_x;
                 double delta_y = y - mouse_y;
 
-                rotation -= delta_x * .001f;
+                rotation -= delta_x * .005f;
             }
             else{
 
